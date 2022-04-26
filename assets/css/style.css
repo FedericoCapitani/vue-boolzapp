@@ -34,4 +34,12 @@
     width: 80%;
     margin: 3vh 10%;
     background-color: white;
+    display: flex;
+}
+
+.contatti{
+    width: 35%;
+}
+.text_area{
+    width: 65%;
 }

@@ -116,9 +116,12 @@
     font-size: 20px;
     padding: 0px 30px;
 }
+.search_input{
+    width: calc(100% - 80px);
+}
 .search_input > input{
     border: none;
-    width: 300px;
+    width: 100%;
 }
 /* contatti */
 .contatti{
@@ -153,6 +156,7 @@
     padding: 5px;
 }
 /* text area */
+/* info contatto selezionato */
 .user_selected{
     background-color: var(--menu);
     height: 80px;
@@ -166,4 +170,29 @@
 }
 .user_info{
     flex-grow: 2;
+}
+/* are messaggi contatto selezionato */
+.area_messaggi{
+    background-image: url(./assets/img/mine.jpg);
+    height: calc(100% - 160px);
+}
+/* area input messaggi utente */
+.input_messaggi{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: var(--user_output);
+}
+.menu_emoji, .msg_vocale{
+    color: gray;
+    font-size: 2rem;
+    padding: 0 40px;
+}
+.area_input_messaggio{
+    flex-grow: 2;
+}
+.area_input_messaggio > input{
+    border: none;
+    width: 100%;
+    padding: 20px 10px;
 }

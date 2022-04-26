@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="contatti">
-                    <div class="contatto" v-for="contact in contacts">
+                    <div class="contatto" v-for="contact in contacts" @click="selezionato">
                         <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                         <div class="contact_info">
                             <p>{{contact.name}}</p>
@@ -70,7 +70,7 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="area_messaggi">
+                <div class="area_messaggi" v-model="print_msg_history">
 
                 </div>
                 <div class="input_messaggi">

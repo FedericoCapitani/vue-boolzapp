@@ -172,5 +172,13 @@ const app = new Vue({
             }
         ]
     },
-    methods: {}
+    methods: {
+        selezionato(){
+            console.log('cliccato contatto');
+            this.print_msg_history();
+        },
+        print_msg_history(){
+            
+        }
+    }
 })

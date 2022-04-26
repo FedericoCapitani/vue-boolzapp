@@ -173,8 +173,20 @@
 }
 /* are messaggi contatto selezionato */
 .area_messaggi{
-    background-image: url(./assets/img/mine.jpg);
+    background-image: url(/assets/img/mine.jpg);
     height: calc(100% - 160px);
+}
+.msg_sent{
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--msg_sent);
+    margin-left: 60%;
+}
+.msg_received{
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 60%;
 }
 /* area input messaggi utente */
 .input_messaggi{

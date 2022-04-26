@@ -12,6 +12,8 @@
     --selected: #e9ebeb;
     --msg_sent: #d5f9ba;
     --user_output: #f3eeea;
+    --search: #fafafa;
+    --icon_color: #b1b1b1;
 }
 
 .pos_rel{
@@ -42,4 +44,35 @@
 }
 .text_area{
     width: 65%;
+}
+
+/* navbar */
+.navbar{
+    background-color: var(--menu);
+    display: flex;
+    justify-content: space-between;
+}
+.user{
+    height: 80px;
+    align-items: center;
+    display: flex;
+}
+.user > img{
+    height: 80%;
+    margin: 10%;
+    border-radius: 50%;
+    display: inline;
+}
+.user > p{
+    font-size: 1.2rem;
+}
+.options{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    padding-right: 30px;
+}
+.options > i{
+    color: var(--icon_color);
+    font-size: 1.5rem;
 }

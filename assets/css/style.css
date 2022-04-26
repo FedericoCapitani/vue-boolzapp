@@ -3,3 +3,35 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --upper_bg: #009688;
+    --lower_bg: #d8dbd6;
+    --notifications: #8edafc;
+    --menu: #eaeaea;
+    --selected: #e9ebeb;
+    --msg_sent: #d5f9ba;
+    --user_output: #f3eeea;
+}
+
+.pos_rel{
+    position: relative;
+}
+
+.upper_bg{
+    background-color: var(--upper_bg);
+    height: 15vh;
+}
+
+.lower_bg{
+    background-color: var(--lower_bg);
+    height: 85vh;
+}
+
+.container{
+    position: absolute;
+    height: 94vh;
+    width: 80%;
+    margin: 3vh 10%;
+    background-color: white;
+}

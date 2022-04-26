@@ -51,6 +51,7 @@
     background-color: var(--menu);
     display: flex;
     justify-content: space-between;
+    border-right: 1px solid gray;
 }
 .user{
     height: 80px;
@@ -150,4 +151,19 @@
     font-size: 12px;
     color: grey;
     padding: 5px;
+}
+/* text area */
+.user_selected{
+    background-color: var(--menu);
+    height: 80px;
+    align-items: center;
+    display: flex;
+}
+.user_selected > img{
+    height: 80%;
+    margin: 10% 10px;
+    border-radius: 50%;
+}
+.user_info{
+    flex-grow: 2;
 }

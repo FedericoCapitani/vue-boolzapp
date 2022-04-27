@@ -17,7 +17,7 @@
                 <nav class="navbar">
                     <div class="user">
                         <img src="./assets/img/avatar_io.jpg" alt="immagine utente">
-                        <p>nome</p>
+                        <p>Silvia</p>
                     </div>
                     <div class="options">
                         <i class="fa-solid fa-circle-notch"></i>
@@ -44,8 +44,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- lista contatti -->
                 <div class="contatti">
-                    <div class="contatto" v-for="contact in contacts" @click="selezionato">
+                    <div class="contatto" v-for="(contact, index) in contacts" :class="index === activeContact ? 'active':''" @click="selezionato(index)">
                         <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                         <div class="contact_info">
                             <p>{{contact.name}}</p>
@@ -59,9 +60,9 @@
             </aside>
             <aside class="text_area">
                 <div class="user_selected">
-                    <img src="./assets/img/avatar_1.jpg" alt="immagine utente selezionato">
+                    <img :src="'./assets/img/avatar'+ contacts[activeContact].avatar + '.jpg'" alt="immagine utente selezionato">
                     <div class="user_info">
-                        <p>Nome contatto</p>
+                        <p>{{contacts[activeContact].name}}</p>
                         <p class="last_msg">ultimo messaggio oggi alle 12:00</p>
                     </div>
                     <div class="options">
@@ -70,8 +71,11 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="area_messaggi" v-model="print_msg_history">
-
+                <!-- area dei messaggi -->
+                <div class="area_messaggi">
+                    <div class="message" :class="message.status === 'sent' ? 'sent' : 'received'" v-for="message in contacts[activeContact].message">
+                        {{message.message}}
+                    </div>
                 </div>
                 <div class="input_messaggi">
                     <div class="menu_emoji">

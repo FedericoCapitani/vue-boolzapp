@@ -45,6 +45,9 @@
 .text_area{
     width: 65%;
 }
+.active{
+    background-color: var(--selected);
+}
 /* contatti */
 /* navbar */
 .navbar{
@@ -175,18 +178,23 @@
 .area_messaggi{
     background-image: url(/assets/img/mine.jpg);
     height: calc(100% - 160px);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 }
-.msg_sent{
+.message{
     padding: 10px 15px;
     border-radius: 10px;
-    background-color: var(--msg_sent);
-    margin-left: 60%;
 }
-.msg_received{
+.sent{
+    background-color: var(--msg_sent);
+    align-self: flex-end;
+}
+.received{
     padding: 10px 15px;
     border-radius: 10px;
     background-color: white;
-    margin-right: 60%;
+    align-self: flex-start;
 }
 /* area input messaggi utente */
 .input_messaggi{

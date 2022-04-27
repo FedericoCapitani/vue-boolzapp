@@ -8,6 +8,7 @@ Click sul contatto mostra la conversazione del contatto cliccato */
 const app = new Vue({
     el: '#app',
     data: {
+        activeContact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -173,12 +174,10 @@ const app = new Vue({
         ]
     },
     methods: {
-        selezionato(){
+        selezionato(i){
             console.log('cliccato contatto');
-            this.print_msg_history();
-        },
-        print_msg_history(){
-            
+            activeContact = i;
+            console.log(activeContact);
         }
     }
 })

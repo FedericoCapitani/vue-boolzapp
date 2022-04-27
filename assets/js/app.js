@@ -9,6 +9,7 @@ const app = new Vue({
     el: '#app',
     data: {
         activeContact: 0,
+        newMessage: '',
         contacts: [
             {
                 name: 'Michele',
@@ -177,7 +178,14 @@ const app = new Vue({
         selezionato(i){
             console.log('cliccato contatto');
             this.activeContact = i;
-            console.log(activeContact);
+        },
+        new_message(){
+            if(this.newMessage === ''){
+                alert('non hai scritto il messaggio!')
+            }else{
+                this.contacts.messages.push({date: '10/01/2020 15:52:00', message: this.newMessage, status:'sent'})
+            }
+            this.newMessage = ''
         }
     }
 })

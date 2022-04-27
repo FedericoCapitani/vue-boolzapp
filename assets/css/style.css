@@ -189,12 +189,14 @@
 .sent{
     background-color: var(--msg_sent);
     align-self: flex-end;
+    margin: 1rem;
 }
 .received{
     padding: 10px 15px;
     border-radius: 10px;
     background-color: white;
     align-self: flex-start;
+    margin: 1rem;
 }
 /* area input messaggi utente */
 .input_messaggi{

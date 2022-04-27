@@ -73,7 +73,7 @@
                 </div>
                 <!-- area dei messaggi -->
                 <div class="area_messaggi">
-                    <div class="message" :class="message.status === 'sent' ? 'sent' : 'received'" v-for="message in contacts[activeContact].message">
+                    <div class="message" :class="message.status === 'sent' ? 'sent' : 'received'" v-for="message in contacts[activeContact].messages">
                         {{message.message}}
                     </div>
                 </div>

@@ -185,6 +185,7 @@
 .message{
     padding: 10px 15px;
     border-radius: 10px;
+    max-width: 40%;
 }
 .sent{
     background-color: var(--msg_sent);

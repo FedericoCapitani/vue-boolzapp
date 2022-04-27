@@ -188,9 +188,11 @@ const app = new Vue({
                 alert('non hai scritto il messaggio!')
             }else{
                 this.contacts[activeContact].messages.push({date: dateTime, message: this.newMessage, status:'sent'})
+                setTimeout(() => {
+                    this.contacts[activeContact].messages.push({date: dateTime, message: 'Ok', status:'received'}) 
+                },1000)
             }
             this.newMessage = ''
-            console.log(this.contacts[activeContact].messages);
         }
     }
 })

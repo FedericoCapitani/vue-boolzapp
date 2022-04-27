@@ -10,6 +10,7 @@ const app = new Vue({
     data: {
         activeContact: 0,
         newMessage: '',
+        search: '',
         contacts: [
             {
                 name: 'Michele',
@@ -193,6 +194,14 @@ const app = new Vue({
                 },1000)
             }
             this.newMessage = ''
+        }
+    },
+    computed:{
+        filteredContacts(){
+            // inserisco gli elementi dell'array in un nuovo arrey filtrando in base al valore di search mettendoli in un nuovo array se il return di contact.name e this.search è true
+            return this.contacts.filter((contact) => {
+                return contact.name.toLowerCase().match(this.search.toLowerCase())
+            })
         }
     }
 })

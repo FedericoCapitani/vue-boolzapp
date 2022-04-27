@@ -40,17 +40,17 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="search_input">
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search">
                         </div>
                     </div>
                 </div>
                 <!-- lista contatti -->
                 <div class="contatti">
-                    <div class="contatto" v-for="(contact, index) in contacts" :class="index === activeContact ? 'active':''" @click="selezionato(index)">
+                    <div class="contatto" v-for="(contact, index) in filteredContacts" :class="index === activeContact ? 'active':''" @click="selezionato(index)">
                         <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                         <div class="contact_info">
                             <p>{{contact.name}}</p>
-                            <p class="last_msg">ultimo messaggio inviato</p>
+                            <p class="last_msg">{{contact.messages[contact.messages.length-1].message}}</p>
                         </div>
                         <div class="time">
                             <p>12:00</p>
@@ -60,10 +60,10 @@
             </aside>
             <aside class="text_area">
                 <div class="user_selected">
-                    <img :src="'./assets/img/avatar'+ contacts[activeContact].avatar + '.jpg'" alt="immagine utente selezionato">
+                    <img :src="'./assets/img/avatar'+ filteredContacts[activeContact].avatar + '.jpg'" alt="immagine utente selezionato">
                     <div class="user_info">
-                        <p>{{contacts[activeContact].name}}</p>
-                        <p class="last_msg">ultimo messaggio oggi alle 12:00</p>
+                        <p>{{filteredContacts[activeContact].name}}</p>
+                        <p class="last_msg">Ultimo messaggio oggi alle 12:00</p>
                     </div>
                     <div class="options">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -73,7 +73,7 @@
                 </div>
                 <!-- area dei messaggi -->
                 <div class="area_messaggi">
-                    <div class="message" :class="message.status === 'sent' ? 'sent' : 'received'" v-for="message in contacts[activeContact].messages">
+                    <div class="message" :class="message.status === 'sent' ? 'sent' : 'received'" v-for="message in filteredContacts[activeContact].messages">
                         {{message.message}}
                     </div>
                 </div>

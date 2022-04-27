@@ -184,12 +184,16 @@ const app = new Vue({
             const today = new Date();
             const date = (today.getDate()+'/'+today.getMonth()+1)+'/'+today.getFullYear();
             const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            // funzione per prendere la data in tempo reale
             const dateTime = date + ' ' + time;
             if(this.newMessage === ''){
+                // se l'utente preme ENTER senza scrivere nulla non push il messaggio nell'array e attivo un avviso
                 alert('non hai scritto il messaggio!')
             }else{
+                // push il nuovo messaggio nell'array
                 this.filteredContacts[activeContact].messages.push({date: dateTime, message: this.newMessage, status:'sent'})
                 setTimeout(() => {
+                    // push un nuovo messaggio dopo 1 secondo simulando una risposta dal contatto
                     this.filteredContacts[activeContact].messages.push({date: dateTime, message: 'Ok', status:'received'}) 
                 },1000)
             }

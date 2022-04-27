@@ -204,7 +204,7 @@ const app = new Vue({
         filteredContacts(){
             // inserisco gli elementi dell'array in un nuovo arrey filtrando in base al valore di search mettendoli in un nuovo array se il return di contact.name e this.search è true
             return this.contacts.filter((contact) => {
-                return contact.name.toLowerCase().match(this.search.toLowerCase())
+                return contact.name.toLowerCase().startsWith(this.search.toLowerCase());
             })
         }
     }

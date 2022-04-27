@@ -176,7 +176,7 @@ const app = new Vue({
     methods: {
         selezionato(i){
             console.log('cliccato contatto');
-            activeContact = i;
+            this.activeContact = i;
             console.log(activeContact);
         }
     }

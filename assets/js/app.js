@@ -179,13 +179,18 @@ const app = new Vue({
             console.log('cliccato contatto');
             this.activeContact = i;
         },
-        new_message(){
+        new_message(activeContact){
+            const today = new Date();
+            const date = (today.getDate()+'/'+today.getMonth()+1)+'/'+today.getFullYear();
+            const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            const dateTime = date + ' ' + time;
             if(this.newMessage === ''){
                 alert('non hai scritto il messaggio!')
             }else{
-                this.contacts.messages.push({date: '10/01/2020 15:52:00', message: this.newMessage, status:'sent'})
+                this.contacts[activeContact].messages.push({date: dateTime, message: this.newMessage, status:'sent'})
             }
             this.newMessage = ''
+            console.log(this.contacts[activeContact].messages);
         }
     }
 })

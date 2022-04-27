@@ -82,7 +82,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="area_input_messaggio">
-                        <input type="text" placeholder="Scrivi un messaggio" v-on:keyup.enter="new_message" v-model="newMessage">
+                        <input type="text" placeholder="Scrivi un messaggio" v-on:keyup.enter="new_message(activeContact)" v-model="newMessage">
                     </div>
                     <div class="msg_vocale">
                         <i class="fa-solid fa-microphone"></i>
